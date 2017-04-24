@@ -1,0 +1,303 @@
+/*
+filename: assgn1.css
+author: Pratyush Sharma
+created: 20/03/2017
+last modified: 27/03/2017
+description: index.hmtl, product.html, enquire.html, about.html, enhancements.html
+*/
+
+/*Font Family */
+html{
+	background-color:black;
+}
+body {
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+div{
+	display:block;
+}
+header {
+	color:white;
+	border:white;
+	border: solid #ffffff 2px;
+	text-align: justify;
+    padding: 0 40px;
+    background: #2c3e50;
+    color: #fff;
+	font-variant:small-caps;
+}
+
+header nav {
+    display: inline-block;
+    vertical-align: middle;
+	padding-bottom:30px;
+}
+/* unvisited link in the Navigation*/
+nav a:link {
+    color: white;
+    text-align: center;
+    padding: 40px 50px;
+}
+
+/* visited link in the Navigation*/
+nav a:visited {
+    color: white;
+}
+
+/* mouse over link in the Navigation*/
+nav a:hover {
+	background-color:black;
+}
+
+/* selected link in the Navigation*/
+nav a:active {
+    color: blue;
+}
+
+/* index.html*/
+/* Main Body and Image container*/
+.mainbody{
+    margin: 0 auto;
+    text-align: center;
+	width:auto;
+	height:800px;
+	background-image: url('../images/bg.png');
+	background-repeat:no-repeat;
+	background-position:center;
+	font-variant:small-caps;
+	color:white;
+}
+
+/* Body Section 2 for button placer*/
+.body2{
+	padding-top:40px;
+	height:80px;
+	background-color:white;
+	text-align:center;
+	color:white;
+}
+.btn{
+	color: #000000;
+	font-size: 20px;
+	background: #ffffff;
+	padding: 10px 20px 10px 20px;
+	border: solid #000000 2px;
+	text-decoration: none;
+
+}
+.btn:hover {
+	background:black;
+	color:white;
+	border:2px;
+	text-decoration: none;
+}
+
+/* Body Section 3 for button placer*/
+.body3{
+	border-color:white;
+	border:2px;
+	text-align:center;
+	color:white;
+}
+/* Psuedo Element*/
+p.small::first-letter {
+    font-size: 200%;
+    color: white;
+}
+.body3 h2{
+	font-variant:small-caps;
+}
+.small p{
+	float:right;
+}
+
+/*product.html*/
+/* Services Sections */
+.services{
+	margin-top:10px;
+	background-color:white;
+	padding: 35px 50px;
+	height:420px;
+	color:white;
+}
+.services1{
+	margin-top:10px;
+	background-color:white;
+	padding: 35px 50px;
+	height:520px;
+	color:white;
+}
+.paddingleft{
+	width:10%;
+	float:left;
+	color:black;
+}
+.paddingright{
+	width:60%;
+	color:#000000;
+	float:right;
+	display:block;
+}
+.paddingright li{
+	font-weight:bold;
+}
+.paddingright h1{
+	font-family:Times;
+	font-size:35px;
+	font-variant:small-caps;
+}
+.paddingright dl{
+	font-weight:bold;
+}
+.paddingright dd{
+	font-weight:normal;
+}
+#aside{
+	float:right;
+	width:25%;
+	color:black;
+	font-weight:bold;
+	margin-bottom:2px;
+}
+
+/*About.html*/
+/* Services Sections */
+.student{
+	margin-top:10px;
+	background-color:white;
+	padding: 35px 50px;
+	height:430px;
+	color:white;
+}
+
+.requirements{
+	margin-top:10px;
+	background-color:white;
+	padding: 35px 50px;
+	height:650px;
+	color:black;
+}
+
+ul.requirements{
+	list-style-type:lower-roman;
+}
+
+ol.requirements{
+	list-style-type:decimal;
+}
+
+.reflection{
+	margin-top:10px;
+	background-color:white;
+	padding: 35px 50px;
+	height:150px;
+	color:black;
+}
+
+.bold{
+	font-weight:bold;
+}
+
+.italic{
+	font-weight:bold;
+	font-style:italic;
+}
+
+dl {
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0
+}
+
+dt {
+  float: left;
+  width: 20%;
+  padding: 0;
+  margin: 0;
+  font-weight:bold;
+}
+
+dd {
+  float: left;
+  width: 80%;
+  padding: 0;
+  margin: 0
+}
+
+img.paddingright{
+	float:right;
+	border-style: double;
+	border:2px;
+}
+
+/*Enquire*/
+.form{
+	text-align: justify;
+    padding: 0 40px;
+    background: white;
+    color:black;
+	font-variant:small-caps;
+	width:95%;
+	font-weight:bold;
+}
+fieldset
+{
+   width:450px
+}
+
+/*enhancements*/
+.video{
+	margin-top:20px;
+	text-align: justify;
+    padding: 0 55px;
+    background: white;
+    color:black;
+	width:95%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#underline{
+	text-decoration:underline;
+}
+
+/*Payment*/
+
+#payment{
+	text-align: justify;
+    padding: 0 40px;
+    background: white;
+    color:black;
+	font-variant:small-caps;
+	width:95%;
+	font-weight:bold;
+}
+
+/* Footer*/
+.footer{
+	margin-top:3px;
+	border:white;
+	color:white;
+	text-align: justify;
+	background: #2c3e50;
+	text-align:center;
+}

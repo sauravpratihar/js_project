@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Style Sheet -->
+  <link href="styles/style.css" rel="stylesheet"/>
+  <!-- Meta Stuff -->
+  <meta charset="utf-8" />
+  <meta name="description" content="Assignment 1" />
+  <meta name="keywords" content="HTML5, tags" />
+  <meta name="author" content="Pratyush Sharma"  />
+  <title>Sharma Oceanic Cruises</title>
+  <!-- Java Script -->
+  <script src="scripts/part2.js"></script>  
+</head>
+<body>
+<!-- header -->
+  <header>
+		<a href="index.html"><img src="images/logo1.png" height="150" width="341" alt=""/></a>
+		<!-- Navigation -->
+		<nav>
+				<a href="index.html">Home</a>
+				<a href="product.html">Services</a>			
+				<a href="enquire.html">Enquiry</a>
+				<a href="about.html">About</a>
+				<a href="enhancements.html">Enhancements</a>
+		</nav>
+  </header>
+<!-- body section1--> 
+<section>
+
+<fieldset class="form">
+	<form id="regform" method="post" action="payment.html" novalidate>
+
+<h1> Buy Our Services here</h1>
+	
+	<fieldset>
+	<legend>Your details:</legend>
+
+		<label>First Name </label><input type="text" name="fname" maxlength="25" pattern="[A-Za-z]" required="required"/><br/><br/>
+
+		<label>Last Name </label><input type="text" name="lname" maxlength="25" pattern="[A-Za-z]" required="required"/><br/><br/>
+
+		<label>Email </label><input type="email" name="mail" required="required"/> <br/><br/>
+
+	<label>Phone </label><input type="tel" name="phone" pattern='[\0]\d{2}[\4]\d{4}[\-]\d{4}' placeholder='04 xxxx xxxx'/> <br/><br/>
+	
+	</fieldset>
+	
+	<fieldset>
+	<legend>Address:</legend>
+	  
+	  <label>Street </label><input type="text" name="street" maxlength="40" required="required"/> <br/> <br/>
+	  
+	  <label>Suburb/town </label>
+	  <input type="text" name="suburb" maxlength="20" required="required"/> <br/> <br/>
+
+	  <label>State </label>
+	  <select name="State" id="state">
+		  <option value="none">Choose</option>
+		  <option value="VIC">VIC</option>
+		  <option value="NSW">NSW</option>
+		  <option value="QLD">QLD</option>
+		  <option value="NT">NT</option>
+		  <option value="WA">WA</option>
+		  <option value="SA">SA</option>
+		  <option value="TAS">TAS</option>
+		  <option value="ACT">ACT</option>
+	  </select> <br/> <br/>
+
+	  <label>Postcode </label>
+	  <input type="text" name="postcode" pattern="[0-9]{4}" id="postcode" placeholder="1234" required="required"/>
+	</fieldset><br/><br/>
+
+	<fieldset>
+	<legend> Preferred Contact Type: </legend>
+
+	<label>Email </label><input type="radio" name="preferred" value="email" required="required"/><br/>
+	<label>Post </label><input type="radio" name="preferred" value="post"/><br/>
+	<label>Phone </label><input type="radio" name="preferred" value="phone"/><br/><br/>
+	 
+	</fieldset>
+	 
+	 <br/><br/>
+
+	<fieldset>
+	  <legend>Finish it up:</legend>
+
+		<label>Product/Services Gift Cards</label></br>
+		<label>(Extra Charges Apply)</label><br/>
+	
+		<select name="services" id="gift">
+			<option value="Choose">Choose</option>
+			<option value="Spa"> Spa - $100</option>
+			<option value="Cabin"> Cabin - $200</option>
+			<option value="Gym"> Gym - $50</option>
+			<option value="Games"> Games - $100</option>
+		</select>
+		</br></br>
+		<label>Select Quantity :<br/></label>
+		
+		<input type="number" name="quantity" id="quantity"> <br/><br/>
+
+		<label>Select Services :<br/></label>
+		
+		<input type="checkbox" name="2bedroom" required="required"/> <label>Luxury Bedroom - $1000</label><br/>
+		<input type="checkbox" name="3bedroom"/> <label>Extra Bedroom - $1500</label><br/><br/>
+
+		<label>Comments <br/></label>
+		<textarea rows="3" cols="50" name="comments" required="required" placeholder="What are you looking forward to?"></textarea>
+	</fieldset>
+		<div class="body2">
+			<button type="submit" class="btn">Pay Now</button>
+			<button type="reset" class="btn">Reset</button>
+		</div>	 
+	</form>
+	</fieldset>
+</section>
+
+<!-- footer--> 
+<footer class="footer">
+	<p>All rights reserved. Copyright of Pratyush Sharma</p>
+</footer>
+</body>
+</html>
