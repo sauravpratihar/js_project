@@ -29,7 +29,6 @@
 <!-- body section1--> 
 <section>
 <fieldset class="form">
-<input type="button" onclick="logout()" value="Cancel">
     
 	<form id="payment" method="post"  onsubmit="return validate_payment();"  novalidate>
 
@@ -87,7 +86,7 @@
 
 	<div class="body2">
         <button class="btn" type="submit">Check Out</button>
-		<button type="reset" id="cancelButton" class="btn">Cancel Order</button>
+		<button type="reset" id="cancelButton" class="btn" onclick="logout()">Cancel Order</button>
 	</div>
 	</form>
 </fieldset>
