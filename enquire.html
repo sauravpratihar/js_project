@@ -10,7 +10,9 @@
   <meta name="author" content="Pratyush Sharma"  />
   <title>Sharma Oceanic Cruises</title>
   <!-- Java Script -->
-  <script src="scripts/part2.js"></script>  
+  <!--<script src="scripts/part2.js"></script> -->
+  <script src="scripts/new.js"></script>  
+   
 </head>
 <body>
 <!-- header -->
@@ -29,7 +31,7 @@
 <section>
 
 <fieldset class="form">
-	<form id="regform" method="post" action="payment.html" novalidate>
+	<form id="regform" method="post" onSubmit="return validate()"  novalidate>
 
 <h1> Buy Our Services here</h1>
 	
@@ -98,7 +100,7 @@
 		</br></br>
 		<label>Select Quantity :<br/></label>
 		
-		<input type="number" name="quantity" id="quantity"> <br/><br/>
+		<input type="text" name="quantity" id="quantity"> <br/><br/>
 
 		<label>Select Services :<br/></label>
 		
