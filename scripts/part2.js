@@ -2,25 +2,32 @@
 
 //enquiry
 var msg = "";
-var enquire = true;
+var enquire = false;
 var payment = true;
 
-function init () 
+function init() 
 {   
 
     if(!document.getElementById("regform")){
         var payment = document.getElementById("payment");
-	    payment.submit = validate_payment();
-	    payment.submit = printdata();
+	    payment.submit = validate_payment;
+	    payment.submit = printdata;
 
         	    
     }
     if(!document.getElementById("payment")){	
 	    var regForm = document.getElementById("regform");
-	    regForm.onsubmit = validate;
+	    regForm.onsubmit = validate();
+    document.getElementById("error").innerHTML = msg;
 
-        // if(enquire == true)
-        //     window.location = "payment.html";
+        if(enquire)
+            window.location = "payment.html";
+
+
+
+        // if(msg){
+            // alert(msg);
+        // }
 
     }
     
@@ -37,7 +44,7 @@ function init ()
 
 function validate(){
     
-    // document.getElementById("error").innerHTML = "New text!";
+    // window.location = "payment.html";
 
     var total = 0;
     sessionStorage.fname = document.getElementById('fname').value;
@@ -46,79 +53,18 @@ function validate(){
     sessionStorage.phone = document.getElementById('phone').value;
     sessionStorage.street = document.getElementById('street').value;
     sessionStorage.town = document.getElementById('town').value;
-    sessionStorage.state = document.getElementById('state').value;
-    sessionStorage.postcode = document.getElementById('postcode').value;
-    
-    if(document.getElementById('email').checked){
+    // if(document.getElementById('state').selectedIndex == 0){
+    //     msg += "Please Choose the State<br>";
+    //     printError();
+    //     return false;
+    //     // printError();
+    // }else
+    {
+        sessionStorage.state = document.getElementById('state').value;
 
-        sessionStorage.contact = document.getElementById('email').value;
-        
-    }
-    if(document.getElementById('post').checked){
-        sessionStorage.contact = document.getElementById('post').value;
-        
-    }
-    if(document.getElementById('cnt').checked){
-        sessionStorage.contact = document.getElementById('cnt').value;     
-    }
-    var product = document.getElementById("gift");
-    
-    //alert(product.value);
-
-    sessionStorage.gift = document.getElementById('gift').value;
-    
-    sessionStorage.quantity = document.getElementById('quantity').value;
-    var m = sessionStorage.gift.split("$");
-        // msg += sessionStorage.gift);
-        // msg += m[1]);
-
-    total = total + parseInt(parseInt(m[1])*parseInt(sessionStorage.quantity));
-
-     if(document.getElementById('3b').checked){
-        sessionStorage.b3 = document.getElementById('3b').value;
-        var n = sessionStorage.b3.split("$");
-        // msg += n);
-        total = total + parseInt(n[1]);      
-    }
-    
-    if(document.getElementById('2b').checked){
-        sessionStorage.b2 = document.getElementById('2b').value;
-        var m = sessionStorage.b2.split("$");
-        // msg += m[1]);
-        total = total + parseInt(m[1]);     
     }
 
-    sessionStorage.total = total;
 
-// msg += sessionStorage.fname);
-    // quantity();
-    var product = document.getElementById("gift");
-    // msg += product.value);
-    
-    if(product.value == "Choose"){
-        msg += "Please Choose the product.<br>";
-        enquire = false;
-    }
-    
-    else{
-        var quantity = document.getElementById("quantity");
-        var numbers = /^[0-9]+$/;
-        if(!quantity.value.match(numbers) || quantity.value == 0) {  
-                msg += 'wrong quantity.<br>';  
-                enquire = false;
-                
-        }
-    }
-    // if (postcode() == false)
-    //     msg += "Postcode invalid<br>";
-
-      var state = document.getElementById("state");
-    if(state.value == "none"){
-        msg += "Please choose the state.<br>";
-        enquire = false;
-        
-    }
-    
     var postcode = document.getElementById("postcode");
     var first = postcode.value.charAt(0);
     var x = false;
@@ -167,99 +113,75 @@ function validate(){
     }
 
     if(x == false){
-        enquire=false;  
-        msg += "Postcode invalid<br>";
+        msg += "Please Enter Valid Postcode<br>";
+        return false;
+    }else{
+        sessionStorage.postcode = document.getElementById('postcode').value;
     }
 
-    // alert(msg);
-    document.getElementById("error").innerHTML = msg;
+    if(document.getElementById('email').checked || document.getElementById('post').checked || document.getElementById('cnt').checked){
+        if(document.getElementById('email').checked){
 
-
-    if(enquire == true)
-        window.location = "payment.html";
+        sessionStorage.contact = document.getElementById('email').value;
+        
+        }
+        if(document.getElementById('post').checked){
+        sessionStorage.contact = document.getElementById('post').value;
+        
+        }
+        if(document.getElementById('cnt').checked){
+        sessionStorage.contact = document.getElementById('cnt').value;     
+     }
+    }else{
+        msg += "Please Select Contact Type<br>";
+        return false;
+    }
     
-}
-
-function quantity(){
-
+    
     var product = document.getElementById("gift");
-    // msg += product.value);
-    
     if(product.value == "Choose"){
         msg += "Please Choose the product.<br>";
-        enquire = false;
+        return false;
+        // enquire = false;
+    }else{
+        sessionStorage.gift = document.getElementById('gift').value;
+    }
+
+    var quantity = document.getElementById("quantity");
+    var numbers = /^[0-9]+$/;
+    if(!quantity.value.match(numbers) || quantity.value == 0) {  
+             msg += 'wrong quantity.<br>';  
+             enquire = false;
+             return false;   
+    }else{
+        sessionStorage.quantity = document.getElementById('quantity').value;
+    }
+    var m = sessionStorage.gift.split("$");
+    total = total + parseInt(parseInt(m[1])*parseInt(sessionStorage.quantity));
+
+     if(document.getElementById('3b').checked){
+        sessionStorage.b3 = document.getElementById('3b').value;
+        var n = sessionStorage.b3.split("$");
+        // msg += n);
+        total = total + parseInt(n[1]);      
     }
     
-    else{
-        var quantity = document.getElementById("quantity");
-        var numbers = /^[0-9]+$/;
-        if(!quantity.value.match(numbers) || quantity.value == 0) {  
-                msg += 'wrong quantity.<br>';  
-                enquire = false;
-                
-        }
+    if(document.getElementById('2b').checked){
+        sessionStorage.b2 = document.getElementById('2b').value;
+        var m = sessionStorage.b2.split("$");
+        // msg += m[1]);
+        total = total + parseInt(m[1]);     
     }
+
+    sessionStorage.total = total;
+
+    // if(enquire == true)
+        // window.location = "payment.html";
+    
 }
 
-function postcode(){
-    var state = document.getElementById("state");
-    if(state.value == "none"){
-        msg += "Please choose the state.<br>";
-        enquire = false;
-        
-    }
-    
-    var postcode = document.getElementById("postcode");
-    var first = postcode.value.charAt(0);
-    var x = false;
-    var numbers = /^[0-9]+$/;
-
-    if(postcode.value.match(numbers) && postcode.value.length == 4){
-        switch (state.value) {
-            case "VIC":
-                if(first==3 || first ==8)
-                    x=true;
-                break;
-            case "NSW":
-                if(first==1 || first ==2)
-                    x=true;
-                break;
-            
-            case "QLD":
-                if(first==4 || first ==9)
-                    x=true;
-                break;
-            case "NT":
-                if(first==0)
-                    x=true;
-                break;
-            case "WA":
-                if(first==6)
-                    x=true;
-                break;
-
-            case "SA":
-                if(first==5)
-                    x=true;
-                break;
-            case "TAS":
-                if(first==7)
-                    x=true;
-                break;
-            case "ACT":
-                if(first==0)
-                    x=true;
-                break;
-            default:
-                x = false;
-
-        } 
-    }
-
-    if(x == false)
-        enquire=false;  
-
-    
+function printError(){
+    document.getElementById("error").innerHTML = msg;
 }
 
 
@@ -433,7 +355,6 @@ function logout(){
 // window.onload = printdata;
 
 window.onload = init;
-
 // var clickme = document.getElementById("cancelButton");
 // clickme.onclick = function(){
     
