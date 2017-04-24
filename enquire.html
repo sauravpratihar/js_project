@@ -11,7 +11,7 @@
   <title>Sharma Oceanic Cruises</title>
   <!-- Java Script -->
   <!--<script src="scripts/part2.js"></script> -->
-  <script src="scripts/new.js"></script>  
+  <script src="scripts/part2.js"></script>  
    
 </head>
 <body>
@@ -31,30 +31,30 @@
 <section>
 
 <fieldset class="form">
-	<form id="regform" method="post" onSubmit="return validate()"  novalidate>
+	<form id="regform" method="post" onSubmit="return validate()" action="payment.html" novalidate>
 
 <h1> Buy Our Services here</h1>
 	
 	<fieldset>
 	<legend>Your details:</legend>
 
-		<label>First Name </label><input type="text" name="fname" maxlength="25" pattern="[A-Za-z]" required="required"/><br/><br/>
+		<label>First Name </label><input type="text" id="fname" name="fname" maxlength="25" pattern="[A-Za-z]" required="required"/><br/><br/>
 
-		<label>Last Name </label><input type="text" name="lname" maxlength="25" pattern="[A-Za-z]" required="required"/><br/><br/>
+		<label>Last Name </label><input type="text" id="lname" name="lname" maxlength="25" pattern="[A-Za-z]" required="required"/><br/><br/>
 
-		<label>Email </label><input type="email" name="mail" required="required"/> <br/><br/>
+		<label>Email </label><input type="text" id="mail" name="mail" required="required"/> <br/><br/>
 
-	<label>Phone </label><input type="tel" name="phone" pattern='[\0]\d{2}[\4]\d{4}[\-]\d{4}' placeholder='04 xxxx xxxx'/> <br/><br/>
+	<label>Phone </label><input type="tel" name="phone" id="phone" pattern='[\0]\d{2}[\4]\d{4}[\-]\d{4}' placeholder='04 xxxx xxxx'/> <br/><br/>
 	
 	</fieldset>
 	
 	<fieldset>
 	<legend>Address:</legend>
 	  
-	  <label>Street </label><input type="text" name="street" maxlength="40" required="required"/> <br/> <br/>
+	  <label>Street </label><input type="text" id="street" name="street" maxlength="40" required="required"/> <br/> <br/>
 	  
 	  <label>Suburb/town </label>
-	  <input type="text" name="suburb" maxlength="20" required="required"/> <br/> <br/>
+	  <input type="text" name="suburb" id="town" maxlength="20" required="required"/> <br/> <br/>
 
 	  <label>State </label>
 	  <select name="State" id="state">
@@ -76,9 +76,9 @@
 	<fieldset>
 	<legend> Preferred Contact Type: </legend>
 
-	<label>Email </label><input type="radio" name="preferred" value="email" required="required"/><br/>
-	<label>Post </label><input type="radio" name="preferred" value="post"/><br/>
-	<label>Phone </label><input type="radio" name="preferred" value="phone"/><br/><br/>
+	<label>Email </label><input type="radio" name="preferred" value="email" id="email" required="required"/><br/>
+	<label>Post </label><input type="radio" name="preferred" id="post" value="post"/><br/>
+	<label>Phone </label><input type="radio" name="preferred" id="cnt" value="phone"/><br/><br/>
 	 
 	</fieldset>
 	 
@@ -92,10 +92,10 @@
 	
 		<select name="services" id="gift">
 			<option value="Choose">Choose</option>
-			<option value="Spa"> Spa - $100</option>
-			<option value="Cabin"> Cabin - $200</option>
-			<option value="Gym"> Gym - $50</option>
-			<option value="Games"> Games - $100</option>
+			<option value="Spa - $100"> Spa - $100</option>
+			<option value="Cabin - $200"> Cabin - $200</option>
+			<option value="Gym - $50"> Gym - $50</option>
+			<option value="Games - $100"> Games - $100</option>
 		</select>
 		</br></br>
 		<label>Select Quantity :<br/></label>
@@ -104,8 +104,8 @@
 
 		<label>Select Services :<br/></label>
 		
-		<input type="checkbox" name="2bedroom" required="required"/> <label>Luxury Bedroom - $1000</label><br/>
-		<input type="checkbox" name="3bedroom"/> <label>Extra Bedroom - $1500</label><br/><br/>
+		<input type="checkbox" name="2bedroom" id="2b" value="Luxury Bedroom - $1000" /> <label>Luxury Bedroom - $1000</label><br/>
+		<input type="checkbox" name="3bedroom" id="3b" value="Extra Bedroom - $1500" /> <label>Extra Bedroom - $1500</label><br/><br/>
 
 		<label>Comments <br/></label>
 		<textarea rows="3" cols="50" name="comments" required="required" placeholder="What are you looking forward to?"></textarea>

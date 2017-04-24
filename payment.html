@@ -12,7 +12,7 @@
   <!-- Java Script -->
   <script src="scripts/part2.js"></script>  
 </head>
-<body>
+<body onload="printdata()">
 <!-- header -->
   <header>
 		<a href="index.html"><img src="images/logo1.png" height="150" width="341" alt=""/></a>
@@ -28,9 +28,10 @@
 
 <!-- body section1--> 
 <section>
-
 <fieldset class="form">
-	<form id="payment" method="post" action="https://mercury.swin.edu.au/it000000/formtest.php" novalidate>
+<input type="button" onclick="logout()" value="Cancel">
+    
+	<form id="payment" method="post"  onsubmit="return validate_payment();"  novalidate>
 
 	<h1> Checkout Here</h1>
 	
@@ -40,13 +41,13 @@
         <fieldset>
         <legend>Card Type</legend>
 		
-            <input id="visa" name="cardtype" type="radio" />
+            <input id="visa" name="cardtype" type="radio" value="visa" checked/>
             <label for="visa">VISA</label>
 				
-            <input id="amex" name="cardtype" type="radio" />
+            <input id="amex" name="cardtype" type="radio" value="amex"/>
             <label for="amex">AmEx</label>
             
-			<input id="mastercard" name="cardtype" type="radio" />
+			<input id="mastercard" name="cardtype" type="radio" value="mastercard"/>
             <label for="mastercard">Mastercard</label>
 			
 		</fieldset>
@@ -56,15 +57,33 @@
 		<label>First Name </label><input type="text" id="cardname" name="cardname" required="required"/><br/><br/>
 		
 		<label for="cardnumber">Card Number</label>
-        <input id="cardnumber" name="cardnumber" type="number" required="required" />  </br></br>
+        <input id="cardnumber" name="cardnumber" type="text" required="required" />  </br></br>
         
 		<label for="expdate">Expiry Date</label>
         <input id="expdate" name="namecard" type="text" placeholder="Name on Card" required="required" />	</br></br>
 		 
 		<label for="secure">Security Code</label>
-        <input id="secure" name="secure" type="number"  required="required"/>  </br></br>
+        <input id="secure" name="secure" type="text"  required="required"/>  </br></br>
         
 		</fieldset>
+
+		<fieldset>
+            <p id="fname"></p>
+            <p id="lname"></p>
+            <p id="mail"></p>
+            <p id="phone"></p>
+            <p id="street"></p>
+            <p id="town"></p>
+            <p id="state"></p>
+            <p id="postcode"></p>
+            <p id="contact"></p>
+            <p id="gift"></p>
+            <p id="quantity"></p>
+            <p id="b2"></p>
+            <p id="b3"></p>
+            <p id="total"></p>
+		</fieldset>
+        
 
 	<div class="body2">
         <button class="btn" type="submit">Check Out</button>
