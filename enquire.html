@@ -4,14 +4,15 @@
   <!-- Style Sheet -->
   <link href="styles/style.css" rel="stylesheet"/>
   <!-- Meta Stuff -->
+
   <meta charset="utf-8" />
   <meta name="description" content="Assignment 1" />
   <meta name="keywords" content="HTML5, tags" />
   <meta name="author" content="Pratyush Sharma"  />
   <title>Sharma Oceanic Cruises</title>
   <!-- Java Script -->
-  <script src="scripts/part2.js"></script> 
-  <!--<script src="scripts/old.js"></script>  -->
+	<script src="scripts/part2_1.js"></script> 
+
    
 </head>
 <body>
@@ -30,10 +31,12 @@
 <!-- body section1--> 
 <section>
 
-<fieldset class="form">
-	<form id="regform" method="post" novalidate>
+<p id="error" style="color:red"></p>
 
-	<p id="error" style="color:red"></p>
+<fieldset class="form ">
+
+	<form id="myform" method="post" novalidate>
+
 <h1> Buy Our Services here</h1>
 	
 	<fieldset>
@@ -59,7 +62,7 @@
 
 	  <label>State </label>
 	  <select name="State" id="state">
-		  <option value="none">Choose</option>
+		  <option value="Choose">Choose</option>
 		  <option value="VIC">VIC</option>
 		  <option value="NSW">NSW</option>
 		  <option value="QLD">QLD</option>
@@ -110,9 +113,10 @@
 
 		<label>Comments <br/></label>
 		<textarea rows="3" cols="50" name="comments" required="required" placeholder="What are you looking forward to?"></textarea>
-	</fieldset>
+		
+		</fieldset>
 		<div class="body2">
-			<button type="submit" class="btn">Pay Now</button>
+			<input type="submit" class="btn">Pay Now</button>
 			<button type="reset" class="btn">Reset</button>
 		</div>	 
 	</form>
@@ -124,4 +128,5 @@
 	<p>All rights reserved. Copyright of Pratyush Sharma</p>
 </footer>
 </body>
+
 </html>

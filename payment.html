@@ -10,7 +10,7 @@
   <meta name="author" content="Pratyush Sharma"  />
   <title>Sharma Oceanic Cruises</title>
   <!-- Java Script -->
-  <script src="scripts/part2.js"></script>  
+  <script src="scripts/part2_2.js"></script>  
 </head>
 <body >
 <!-- header -->
@@ -28,11 +28,11 @@
 
 <!-- body section1--> 
 <section>
+  <p id="error" style="color:red"></p>    
 
 <fieldset class="form">
     
 	<form id="payment" method="post"  action="https://mercury.swin.edu.au/it000000/formtest.php" novalidate>
-            <p id="error"></p>    
 
 	<h1> Checkout Here</h1>
 	
@@ -42,7 +42,7 @@
     
         <fieldset>
         <legend>Card Type</legend>
-            <input id="visa" name="cardtype" type="radio" value="visa" checked/>
+            <input id="visa" name="cardtype" type="radio" value="visa"/>
             <label for="visa">VISA</label>
 				
             <input id="amex" name="cardtype" type="radio" value="amex"/>
@@ -79,8 +79,7 @@
             <p>Postcode: <span id="postcode"></span></p>
             <p>Contact: <span id="contact"></span></p>
             <p>Item: <span id="gift"></span> X  <span id="quantity"></span></p> 
-            <!--<p>2b: <span id="2b"></span></p>-->
-            <!--<p>3b: <span id="3b"></span></p>-->
+            <p>Service(s): <span id="service"></span></p>
             
             
 		</fieldset>
